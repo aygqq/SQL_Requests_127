@@ -19,13 +19,14 @@ FROM
 where
     code = 8
 	and device_uid = '0057001c3436511030343832'
-	and time_received > '2022-03-30' 
+	and time_received > '2022-04-25' 
 --     and time < '2021-11-13' 
 ORDER BY
-    time_received desc, time desc, id desc
+--     time_received desc,
+	time desc, id desc
 LIMIT 100000 ) as foo
 -- where
--- 	foo.ppru_from = '25'
+-- 	foo.ppru_to = '04'
 -- 	and foo.ppru_from = '02'
 ORDER BY
 	device_uid

@@ -17,18 +17,19 @@ FROM
 where
     code = 5
 	and device_uid = '0057001c3436511030343832'
-	and time_received > '2022-03-30' 
+	and time_received > '2022-04-25' 
 -- 	and time < '2022-02-05' 
 ORDER BY
-    time_received desc, time desc, id desc
+--     time_received desc,
+	time desc, id desc
 LIMIT 10000 ) as foo
 where
 	foo.gr = '07'
 	-- Кол-во отправленых, полученных дверей. А также наполнение пакетов с дверьми. Счетчики обнуляются при отправке.
 -- 	and (foo.code = '01' or foo.code = '02' or foo.code = '04') 
--- 	and (foo.code = '01' or foo.code = '02') 
-	and (foo.code = '02') 
--- 	and (foo.code = '04') 
+	and (foo.code = '01' or foo.code = '02') 
+-- 	and (foo.code = '02') 
+--  and (foo.code = '04') 
 	
 	-- Ошибки по дверям, счетчики не обнуляются при отправке.
 -- 	and (foo.code = '03') 
