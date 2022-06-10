@@ -16,18 +16,19 @@ FROM
     public.data_atomic
 where
     code = 5
-	and device_uid = '0057001c3436511030343832'
--- 	and time > '2021-11-30' 
---     and time < '2021-12-01 23:00'  
+    and device_uid = '0040001e3436511030343832'
+
+	and time_received > '2022-06-05' 
+-- 	and time_received < '2022-06-09' 
 ORDER BY
     time_received desc, time desc, id desc
 LIMIT 500000 ) as foo
 where
+--     (foo.gr = '01' and (foo.code = '01')) -- BSG fw
+-- 	or (foo.gr = '03' and (foo.code = '06')) -- IU fw
+    
 -- 	foo.gr = '03' and foo.code = '0a'
 	foo.gr = '02' 
-	or foo.gr = '01'
--- 	or (foo.gr = '01' and (foo.code != '07' and foo.code != '08')) -- BSG update
--- 	or (foo.gr = '03' and (foo.code = '06' or foo.code = '07' or foo.code = '08')) -- IU update
--- 	or (foo.gr = '03' and (foo.code = '01' or foo.code = '02')) -- PPRU and BKTE fw versions
-ORDER BY
-	device_uid
+-- 	or foo.gr = '01'
+	or (foo.gr = '01' and (foo.code != '07' and foo.code != '08')) -- BSG update
+	or (foo.gr = '03' and (foo.code = '06' or foo.code = '07' or foo.code = '08')) -- IU update

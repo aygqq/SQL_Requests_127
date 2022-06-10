@@ -3,6 +3,7 @@ FROM (
 SELECT
 	id,
 	device_uid,
+	split_part(cast(time_received as text), ' ', 1) as rec_date,
 	split_part(cast(time as text), ' ', 1) as fact_date,
 	split_part(cast(time_received as text), ' ', 2) as rec_time,
 	split_part(cast(time as text), ' ', 2) as fact_time,
@@ -16,21 +17,20 @@ FROM
     public.data_atomic
 where
     code = 5
-	and device_uid = '0058001c3436511030343832'
-	and time > '2022-02-19' 
---     and time < '2021-11-25' 
+	and device_uid = '0055001c3436511030343832'
+	and time_received > '2022-05-29' 
+-- 	and time_received < '2022-05-21' 
 ORDER BY
     time_received desc, time desc, id desc
-LIMIT 10000 ) as foo
+LIMIT 10000000 ) as foo
 where
 -- 	foo.gr = '04'
 -- 	and (foo.code = '0d' or foo.code = '0e') -- RSSI all and filter counters
 -- 	and (foo.code = '0f') -- Repeat telemetry
 	foo.gr = '03'
+-- and (foo.code = '01') -- BKTE and PPRU fw versions
 	and foo.code = '09' -- PPRU state and time
--- 	and foo.num = 7
+-- and foo.num = 23
 -- 	and foo.param > 3
 -- 	and foo.cnt > 10
 -- 	and foo.code = '0a' -- Speed changed
-ORDER BY
-	device_uid
