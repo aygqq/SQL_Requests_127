@@ -16,9 +16,9 @@ FROM
     public.data_atomic
 where
     code = 5
-    and device_uid = '0040001e3436511030343832'
+	and device_uid = '0061001d3436511030343832'
 
-	and time_received > '2022-06-05' 
+	and time_received > '2022-06-14' 
 -- 	and time_received < '2022-06-09' 
 ORDER BY
     time_received desc, time desc, id desc

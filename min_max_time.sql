@@ -29,8 +29,8 @@ from  atomic_parameters ,
    count(id) as amount
  from data_atomic
  where 
-    time_received > '2022-06-10'  
-    and time_received < '2022-06-11'  
+    time_received > '2022-06-16'  
+    and time_received < '2022-06-17'  
  group by max_recdate, uid, data_atomic.code
   ) as d
 where  atomic_parameters.code = d.code

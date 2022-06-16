@@ -18,11 +18,12 @@ FROM
     public.data_atomic
 where
 	code = 10
-    and device_uid = '0057001c3436511030343832'
-	and time > '2022-04-25' 
+	and device_uid = '0040001e3436511030343832'
+	and time_received > '2022-06-13' 
+	and time_received < '2022-06-14' 
 --     and time < '2021-12-01 23:00'  
 ORDER BY
 --     time_received desc, 
 	time desc, id desc
-LIMIT 15000
+LIMIT 1000000
 ;
