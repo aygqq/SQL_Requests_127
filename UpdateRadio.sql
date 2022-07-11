@@ -10,6 +10,7 @@ SELECT
     cast(split_part(value, ',', 3) as text) as gr,
     cast(split_part(value, ',', 2) as text) as code,
 	(cast(split_part(value, ',', 1) as integer) >> 24) as num,
+	(cast(split_part(value, ',', 1) as integer) >> 24) as num,
 	(cast(split_part(value, ',', 1) as integer) % 16777216) as cnt,
 	(time_received - time) as delta
 FROM

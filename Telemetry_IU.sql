@@ -18,13 +18,13 @@ FROM
     public.data_atomic
 where
     code = 5
-	and device_uid = '0040001e3436511030343832'
+	and device_uid = '0034001d3436511030343832'
 
-	and time_received > '2022-06-24' 
+	and time_received > '2022-06-07' 
 -- 	and time_received < '2022-06-09' 
 ORDER BY
     time_received desc, time desc, id desc
-LIMIT 1000000 ) as foo
+LIMIT 100000 ) as foo
 where
 --     (foo.gr = '01' and (foo.code = '01')) -- BSG fw
 -- 	or (foo.gr = '03' and (foo.code = '06')) -- IU fw

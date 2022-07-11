@@ -18,7 +18,7 @@ FROM
 where
     code = 5
 	and device_uid = '0040001e3436511030343832'
-	and time_received > '2022-06-22' 
+	and time_received > '2022-07-01' 
 -- 	and time_received < '2022-05-21' 
 ORDER BY
     time_received desc, time desc, id desc
@@ -31,6 +31,6 @@ where
 -- 	and (foo.code = '01' or foo.code = '02') -- BKTE and PPRU fw versions
 	and foo.code = '09' -- PPRU state and time
 -- 	and foo.num = 23
--- 	and foo.param > 3
+	and foo.param > 5
 -- 	and foo.cnt > 10
 -- 	and foo.code = '0a' -- Speed changed
