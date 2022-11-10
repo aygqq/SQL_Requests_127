@@ -18,8 +18,8 @@ FROM
     public.data_atomic
 where
     code = 5
-	and device_uid = '0055001c3436511030343832'
-	and time_received > '2022-06-23' 
+	and device_uid = '0040001e3436511030343832'
+	and time_received > '2022-07-12' 
 -- 	and time_received < '2022-06-18' 
 -- 	and time < '2022-02-05' 
 ORDER BY
@@ -34,10 +34,10 @@ where
 	-- Кол-во запросов, подтверждений, всего ответов, пустых ответов. Счетчики обнуляются при отправке.
 -- 	and (foo.code = '01' or foo.code = '06' or foo.code = '07' or foo.code = '08')
     -- Полный комплект данных
-	and foo.code < '09'
+-- 	and foo.code < '09'
 
     -- ПУстые ответы подряд и их общее количество за минуту
---     and (foo.code = '09' or foo.code = '08')
+    and (foo.code = '09' or foo.code = '08')
 
     -- Поля результата - cnt и req_time
     -- Все счетчики обнуляются после формирования телеметрии (раз в минуту)

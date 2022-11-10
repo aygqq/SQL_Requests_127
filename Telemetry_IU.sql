@@ -18,19 +18,37 @@ FROM
     public.data_atomic
 where
     code = 5
-	and device_uid = '005c001c3436511030343832' -- 232-1
+-- 	and device_uid = '0057001c3436511030343832' -- 224-1
+-- 	and device_uid = '0072002b3436510f30343832' -- 224-11
+	
+-- 	and device_uid = '006d002c3436510f30343832' -- 226-1
+-- 	and device_uid = '006a002b3436510f30343832' -- 226-11
+	
+-- 	and device_uid = '005c001c3436511030343832' -- 232-1
 -- 	and device_uid = '0065002c3436510f30343832' -- 232-11
+	
+-- 	and device_uid = '003c001d3436511030343832' -- 243-1
+-- 	and device_uid = '0039001d3436511030343832' -- 243-11
+	
+-- 	and device_uid = '0058001c3436511030343832' -- 245-1
+-- 	and device_uid = '005a001c3436511030343832' -- 245-11
 	
 -- 	and device_uid = '0065002b3436510f30343832' -- 250-1
 -- 	and device_uid = '0036001d3436511030343832' -- 250-11
 	
 -- 	and device_uid = '0061001d3436511030343832' -- 251-1
 -- 	and device_uid = '005b001c3436511030343832' -- 251-11
-	and time_received > '2022-10-27' 
+	
+-- 	and device_uid = '0040001e3436511030343832' -- 261-1
+-- 	and device_uid = '006a002c3436510f30343832' -- 261-11
+	
+-- 	and device_uid = '0074002b3436510f30343832' -- 272-1
+-- 	and device_uid = '0034001d3436511030343832' -- 272-11
+	and time_received > '2022-11-10' 
 -- 	and time_received < '2022-06-09' 
 ORDER BY
     time_received desc, time desc, id desc
-LIMIT 10000 ) as foo
+LIMIT 100000 ) as foo
 where
 --     (foo.gr = '01' and (foo.code = '01')) -- BSG fw
 -- 	or (foo.gr = '03' and (foo.code = '06')) -- IU fw

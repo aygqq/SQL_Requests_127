@@ -41,16 +41,16 @@ FROM
     public.data_atomic
 where
     code = 5
-	and device_uid = '0058001c3436511030343832'
+	and device_uid = '004f00244d4d50012036394e'
 -- 	and time > '2022-02-21' 
 -- 	and time < '2022-02-22' 
 ORDER BY
     time_received desc, time desc, id desc
-LIMIT 1000000 ) as foo
+LIMIT 1000 ) as foo
 where
 	foo.gr = '03'
 	and (foo.code = '03') -- new doors telemetry
-	and (num = 1)
+-- 	and (num = 1)
 ORDER BY
 	device_uid
 	
